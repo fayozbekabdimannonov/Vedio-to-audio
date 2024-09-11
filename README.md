@@ -1,65 +1,58 @@
-# Telegram TTS Bot
+# Vedio-to-audio
 
-Bu Telegram bot foydalanuvchilarning matnli xabarlarini ovozli xabarlarga aylantiradi. Siz ushbu botni Telegram orqali matnni ovozli xabarga aylantirish uchun ishlatishingiz mumkin.
+Bu bot sizga jo'natgan short yoki 200MB oshmagan hajmdagi videolaringizni MP3 formatiga o'girib beradi.
 
-## Asosiy xususiyatlar
+## Xususiyatlar
+- **Vedio-to-audio** yordamida videolaringizni MP3 formatiga o'girishingiz mumkin.
 
-- Matnli xabarlarni ovozli xabarlarga aylantirish
-- Ovozli xabarlar yuqori sifatli TTS (Text-To-Speech) texnologiyasi yordamida yaratiladi
-- Foydalanuvchilarning ovozli xabarlarini saqlash va ulashish imkoniyati
-
-## Talablar
-
+## Texnologiyalar
 - Python 3.7 yoki undan yuqori versiya
-- `aiogram` kutubxonasi
-- `gTTS` yoki boshqa TTS kutubxonasi
+- aiogram kutubxonasi
 
 ## O'rnatish
-
 1. GitHub repozitoriyasini klonlang:
-
     ```bash
-    git clone https://github.com/Nurbek333/ttsuz_bot.git
-    cd your-repository
+    git clone https://github.com/Rakhmatulloyev/inline-pictere-bot.git
+    cd inline-pictere-bot
     ```
 
 2. Virtual muhit yaratib, uni faollashtiring (ixtiyoriy):
-
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # Linux/MacOS
-    venv\Scripts\activate     # Windows
-    ```
+    - **Linux/MacOS**:
+      ```bash
+      python -m venv venv
+      source venv/bin/activate
+      ```
+    - **Windows**:
+      ```bash
+      python -m venv venv
+      venv\Scripts\activate
+      ```
 
 3. Zaruriy kutubxonalarni o'rnating:
-
     ```bash
     pip install -r requirements.txt
     ```
 
-4. `.env` faylini yaratib, Telegram bot tokenini qo'shing:
-
-    ```
+4. `.env` faylini yaratib, quyidagi ma'lumotlarni qo'shing:
+    ```bash
     BOT_TOKEN=your-telegram-bot-token
+    CHANNELS=your-channels-id
+    ADMINS=your-id
     ```
 
+## Filtrlar
+- **admin.py**: Adminlar uchun maxsus funksiyalarni filtrlaydigan kodlar.
+- **check_sub_channel.py**: Foydalanuvchining kerakli kanalga obuna bo‘lganligini tekshiruvchi kodlar.
 
+## Klaviatura tugmalari
+- **admin_keyboard.py**: Bot interfeysida adminlar uchun klaviatura tugmalari sozlanadi.
 
-- **filters/**:
-  - `admin.py`: Adminlar uchun maxsus funksiyalarni filtrlaydigan kodlar joylashgan.
-  - `check_sub_channel.py`: Foydalanuvchining kerakli kanalga obuna bo‘lganligini tekshiruvchi kodlar.
+## Menyu buyruqlari
+- **set_bot_commands.py**: Telegram bot menyusidagi buyruqlarni o'rnatish uchun skript.
 
-- **keyboard_buttons/**:
-  - `admin_keyboard.py`: Bot interfeysida adminlar uchun klaviatura tugmalari sozlanadi.
-
-- **menucommands/**:
-  - `set_bot_commands.py`: Telegram bot menyusidagi buyruqlarni o'rnatish uchun skript.
- 
-
-## Ishga tushirish
-
-Botni ishga tushurish uchun:
-
+## Ishga tushurish
+Botni quyidagi buyruq orqali ishga tushiring:
 ```bash
 python bot.py
+
 
